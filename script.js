@@ -55,7 +55,8 @@ function iniciarJogo(){
     for(i=1; i < snake.length; i++){
     	if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
     		clearInterval(jogo);
-            alert('Game Over :(');
+            alert('Game Over :(')
+            reiniciaJogo();
     	}
     }
 
@@ -91,3 +92,7 @@ drawFood();
 }
 
 let jogo = setInterval(iniciarJogo, 100)
+
+function reiniciaJogo(){
+	window.location.reload();
+}
