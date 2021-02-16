@@ -41,7 +41,11 @@ function update(event){
     if(event.keyCode == 40 && direction != 'up') direction = 'down';
 }
 
-
+let pontos = document.getElementById('point')
+function point(){
+	
+	pontos.innerHTML = `Você fez ${snake.length - 1}  pontos!`
+}
 
 function iniciarJogo(){
 
@@ -55,8 +59,11 @@ function iniciarJogo(){
     for(i=1; i < snake.length; i++){
     	if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
     		clearInterval(jogo);
-            alert('Game Over :(')
-            reiniciaJogo();
+            point()
+            alert('Fim de jogo, parceiro!')
+            setTimeout(function(){
+            	window.location.reload()
+            },4000)
     	}
     }
 
